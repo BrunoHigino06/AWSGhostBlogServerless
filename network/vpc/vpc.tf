@@ -1,11 +1,15 @@
 # VPC
 resource "aws_vpc" "GhostVPC" {
-  cidr_block = var.aws_vpc_GhostVPC.cidr_block
+  cidr_block = "10.0.0.0/16"
   enable_dns_hostnames = true
   enable_dns_support = true
   tags = {
     "Name" = "GhostVPC"
   }
+}
+
+output "aws_vpc_GhostVPC_ID_output" {
+  value = aws_vpc.GhostVPC.id
 }
 
 # Internet Gateway
