@@ -57,5 +57,5 @@ resource "aws_route_table_association" "DatabaseRTAs1" {
 
 resource "aws_route_table_association" "DatabaseRTAs2" {
   subnet_id      = var.DatabaseSubnet2_ID
-  route_table_id = aws_route_table.FrontEndRT.id
+  route_table_id = aws_route_table.DatabaseRT.id
 }
