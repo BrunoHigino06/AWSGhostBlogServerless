@@ -1,76 +1,66 @@
 # Route Table
 
-# ALB route table
-resource "aws_route_table" "ALBRT" {
+# Public route table
+resource "aws_route_table" "PublicRT" {
   vpc_id = var.vpc_id
 
   tags = {
-    Name = "ALBRT"
+    Name = "PublicRT"
   }
 }
 
-resource "aws_route_table_association" "ALBRTAs1" {
+resource "aws_route_table_association" "PublicRTAs1" {
   subnet_id      = var.ALBSubnet1_ID
-  route_table_id = aws_route_table.ALBRT.id
+  route_table_id = aws_route_table.PublicRT.id
 }
 
-resource "aws_route_table_association" "ALBRTAs2" {
+resource "aws_route_table_association" "PublicRTs2" {
   subnet_id      = var.ALBSubnet2_ID
-  route_table_id = aws_route_table.ALBRT.id
+  route_table_id = aws_route_table.PublicRT.id
 }
 
 
 
-# FrontEnd route table
-resource "aws_route_table" "FrontEndRT" {
+# Private route table
+resource "aws_route_table" "PrivateRT" {
   vpc_id = var.vpc_id
 
   tags = {
-    Name = "FrontEndRT"
+    Name = "PrivateRT"
   }
 }
 
-resource "aws_route_table_association" "FrontEndRTAs1" {
+resource "aws_route_table_association" "FrontEndSubnet1As" {
   subnet_id      = var.FrontEndSubnet1_ID
-  route_table_id = aws_route_table.FrontEndRT.id
+  route_table_id = aws_route_table.PrivateRT.id
 }
 
-resource "aws_route_table_association" "FrontEndRTAs2" {
+resource "aws_route_table_association" "FrontEndSubnet2As" {
   subnet_id      = var.FrontEndSubnet2_ID
-  route_table_id = aws_route_table.FrontEndRT.id
+  route_table_id = aws_route_table.PrivateRT.id
 }
 
-
-# Database route table
-resource "aws_route_table" "DatabaseRT" {
-  vpc_id = var.vpc_id
-
-  tags = {
-    Name = "DatabaseRT"
-  }
-}
-
-resource "aws_route_table_association" "DatabaseRTAs1" {
+resource "aws_route_table_association" "DatabaseSubnet1As" {
   subnet_id      = var.DatabaseSubnet1_ID
-  route_table_id = aws_route_table.DatabaseRT.id
+  route_table_id = aws_route_table.PrivateRT.id
 }
 
-resource "aws_route_table_association" "DatabaseRTAs2" {
+resource "aws_route_table_association" "DatabaseSubnet2As" {
   subnet_id      = var.DatabaseSubnet2_ID
-  route_table_id = aws_route_table.DatabaseRT.id
+  route_table_id = aws_route_table.PrivateRT.id
 }
 
 # Route Table Routes
 
-# ALB Routes
+# Public Routes
 
 # Route for internet
 resource "aws_route" "ToInternet" {
-  route_table_id = aws_route_table.ALBRT.id
+  route_table_id = aws_route_table.PublicRT.id
   gateway_id = var.InternetGateway_ID
   destination_cidr_block = "0.0.0.0/0"
 
   depends_on = [
-    aws_route_table.ALBRT
+    aws_route_table.PublicRT
   ]
 }

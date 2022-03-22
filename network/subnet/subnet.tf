@@ -14,6 +14,10 @@ output "ALBSubnet1_ID" {
   value = aws_subnet.ALBSubnet1.id
 }
 
+output "ALBSubnet1_CIDR" {
+  value = aws_subnet.ALBSubnet1.cidr_block
+}
+
 resource "aws_subnet" "ALBSubnet2" {
   vpc_id     = var.vpc_id
   cidr_block = "10.0.2.0/24"
@@ -26,6 +30,10 @@ resource "aws_subnet" "ALBSubnet2" {
 
 output "ALBSubnet2_ID" {
   value = aws_subnet.ALBSubnet2.id
+}
+
+output "ALBSubnet2_CIDR" {
+  value = aws_subnet.ALBSubnet2.cidr_block
 }
 
 # FrontEnd Subnet

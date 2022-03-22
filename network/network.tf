@@ -33,3 +33,23 @@ module "routetable" {
     module.subnet
   ]
 }
+
+module "securitygroup" {
+  source = ".\\securitygroup\\"
+  
+  # Security Group
+  vpc_id = module.vpc.aws_vpc_GhostVPC_ID_output
+
+  # Security Group rules
+  ALBSubnet1_CIDR = module.subnet.ALBSubnet1_CIDR
+  ALBSubnet2_CIDR = module.subnet.ALBSubnet2_CIDR
+  FrontEndSubnet1_CIDR = module.subnet.FrontEndSubnet1_CIDR
+  FrontEndSubnet2_CIDR = module.subnet.FrontEndSubnet2_CIDR
+  DataBaseSubnet1_CIDR = module.subnet.DataBaseSubnet1_CIDR
+  DataBaseSubnet2_CIDR = module.subnet.DataBaseSubnet2_CIDR
+
+  depends_on = [
+    module.vpc,
+    module.subnet
+  ]
+}
