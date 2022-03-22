@@ -59,3 +59,18 @@ resource "aws_route_table_association" "DatabaseRTAs2" {
   subnet_id      = var.DatabaseSubnet2_ID
   route_table_id = aws_route_table.DatabaseRT.id
 }
+
+# Route Table Routes
+
+# ALB Routes
+
+# Route for internet
+resource "aws_route" "ToInternet" {
+  route_table_id = aws_route_table.ALBRT.id
+  gateway_id = var.InternetGateway_ID
+  destination_cidr_block = "0.0.0.0/0"
+
+  depends_on = [
+    aws_route_table.ALBRT
+  ]
+}
