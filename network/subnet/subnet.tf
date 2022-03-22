@@ -44,6 +44,10 @@ output "FrontEndSubnet1_ID" {
   value = aws_subnet.FrontEndSubnet1.id
 }
 
+output "FrontEndSubnet1_CIDR" {
+  value = aws_subnet.FrontEndSubnet1.cidr_block
+}
+
 resource "aws_subnet" "FrontEndSubnet2" {
   vpc_id     = var.vpc_id
   cidr_block = "10.0.4.0/24"
@@ -56,6 +60,10 @@ resource "aws_subnet" "FrontEndSubnet2" {
 
 output "FrontEndSubnet2_ID" {
   value = aws_subnet.FrontEndSubnet2.id
+}
+
+output "FrontEndSubnet2_CIDR" {
+  value = aws_subnet.FrontEndSubnet2.cidr_block
 }
 
 # DataBase Subnet
@@ -74,6 +82,10 @@ output "DataBaseSubnet1_ID" {
   value = aws_subnet.DataBaseSubnet1.id
 }
 
+output "DataBaseSubnet1_CIDR" {
+  value = aws_subnet.DataBaseSubnet1.cidr_block
+}
+
 resource "aws_subnet" "DataBaseSubnet2" {
   vpc_id     = var.vpc_id
   cidr_block = "10.0.6.0/24"
@@ -86,4 +98,8 @@ resource "aws_subnet" "DataBaseSubnet2" {
 
 output "DataBaseSubnet2_ID" {
   value = aws_subnet.DataBaseSubnet2.id
+}
+
+output "DataBaseSubnet2_CIDR" {
+  value = aws_subnet.DataBaseSubnet2.cidr_block
 }

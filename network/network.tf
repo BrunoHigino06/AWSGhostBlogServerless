@@ -28,7 +28,6 @@ module "routetable" {
   DatabaseSubnet2_ID = module.subnet.DataBaseSubnet2_ID
   InternetGateway_ID = module.vpc.GhostIGW_ID
 
-
   depends_on = [
     module.vpc,
     module.subnet
