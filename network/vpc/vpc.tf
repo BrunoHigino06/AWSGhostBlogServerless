@@ -23,7 +23,3 @@ resource "aws_internet_gateway" "GhostIGW" {
     aws_vpc.GhostVPC
   ]
 }
-
-output "GhostIGW_ID" {
-  value = aws_internet_gateway.GhostIGW.id
-}
