@@ -6,3 +6,10 @@ terraform.tfstate
 .terraform.lock.hcl
 .terraform.tfstate.lock.info
 Itens.txt
+.terraform/modules/network.vpc/README.md
+.terraform/modules/network.vpc/network/vpc/vpc.tf
+.terraform/modules/network.vpc/network/vpc/vars.tf
+.terraform/modules/network.vpc/network/vpc/instructions.txt
+.terraform/modules/network.vpc/network/subnet/vars.tf
+.terraform/modules/network.vpc/network/subnet/subnet.tf
+.terraform/modules/network.subnet/
