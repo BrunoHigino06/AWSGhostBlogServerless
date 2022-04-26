@@ -13,3 +13,8 @@ Itens.txt
 .terraform/modules/network.vpc/network/subnet/vars.tf
 .terraform/modules/network.vpc/network/subnet/subnet.tf
 .terraform/modules/network.subnet/
+.terraform/modules/network.vpc/AWS/network/vpc/vpc.tf
+.terraform/modules/network.vpc/AWS/network/vpc/vars.tf
+.terraform/modules/network.vpc/AWS/network/vpc/instructions.txt
+.terraform/modules/network.vpc/AWS/network/subnet/vars.tf
+.terraform/modules/network.vpc/AWS/network/subnet/subnet.tf
