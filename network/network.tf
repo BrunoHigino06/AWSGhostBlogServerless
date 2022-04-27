@@ -50,7 +50,7 @@ module "PublicRouteTableAssociation" {
   depends_on = [
     module.vpc,
     module.subnet,
-    module.routetable
+    module.RouteTable
   ]
 }
 
