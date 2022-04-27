@@ -19,6 +19,8 @@ module "subnet" {
   subnets_cidr_block = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
   subnet_az          = ["us-east-1a", "us-east-1b", "us-east-1c"]
 
+  #FrontEnd
+
   depends_on = [
     module.vpc
   ]
