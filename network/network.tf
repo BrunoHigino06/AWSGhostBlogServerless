@@ -31,5 +31,26 @@ module "RouteTable" {
 
   #RouteTable Names
   rt_names = ["Public", "Private"]
+
+  depends_on = [
+    module.subnet,
+    module.vpc
+  ]
+}
+
+module "PublicRouteTableAssociation" {
+  source = "git::https://github.com/BrunoHigino06/terraform_modules.git//aws/network/routetableassociation"
+
+  #Subnet name to associate with public route table
+  subnet_name_association = ["Alb1", "Alb2", "Alb3"]
+
+  #Route table name to associate with the subnets
+  route_table_name_association = ["Public"]
+
+  depends_on = [
+    module.vpc,
+    module.subnet,
+    module.routetable
+  ]
 }
 
