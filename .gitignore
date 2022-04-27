@@ -21,3 +21,4 @@ Itens.txt
 .terraform/modules/network.RouteTable/
 .terraform/modules/network.vpc/AWS/network/routetable/routetable.tf
 .terraform/modules/network.vpc/AWS/network/subnet/instructions.txt
+.terraform/modules/network.PublicRouteTableAssociation/
