@@ -23,3 +23,13 @@ module "subnet" {
     module.vpc
   ]
 }
+
+module "RouteTable" {
+  source = "git::https://github.com/BrunoHigino06/terraform_modules.git//aws/network/routetable"
+
+  # VPC ID
+  vpc_id = module.vpc.vpc_id
+
+  #RouteTable Names
+  rt_names = ["Public", "Private"]
+}
