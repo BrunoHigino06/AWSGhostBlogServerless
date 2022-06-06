@@ -1,5 +1,5 @@
 module "vpc" {
-  source = ""
+  source = "git::https://github.com/BrunoHigino06/aws_vpc_module.git"
 
   vpc = {
     Name = var.vpc.Name
@@ -8,7 +8,7 @@ module "vpc" {
 }
 
 module "subnet" {
-  source = ""
+  source = "git::https://github.com/BrunoHigino06/aws_subnet_module.git"
 
   # VPC ID
   vpc_id = module.vpc.vpc_id
@@ -24,13 +24,13 @@ module "subnet" {
 }
 
 module "RouteTable" {
-  source = ""
+  source = "git::https://github.com/BrunoHigino06/aws_route_table_module.git"
 
   # VPC ID
   vpc_id = module.vpc.vpc_id
 
   #RouteTable Names
-  rt_names = ["Public", "Private"]
+  rt_names = var.rt_names
 
   depends_on = [
     module.subnet,
@@ -39,12 +39,12 @@ module "RouteTable" {
 }
 
 module "PublicRouteTableAssociation" {
-  source = ""
+  source = "git::https://github.com/BrunoHigino06/aws_route_table_association_module.git"
 
   #Subnet name to associate with public route table
-  subnet_name_association = ["Alb1", "Alb2", "Alb3", "FrontEnd1", "FrontEnd2", "FrontEnd3", "DataBase1", "DataBase2", "DataBase3"]
+  subnet_name_association = var.subnet_name_association
   #Route table name to associate with the subnets
-  route_table_name_association = ["Public", "Public", "Public", "Private", "Private", "Private", "Private", "Private", "Private"]
+  route_table_name_association = var.route_table_name_association
 
   depends_on = [
     module.vpc,
