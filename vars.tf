@@ -40,3 +40,8 @@ variable "route_table_name_association" {
   type = list(string)
   description = "name of the route tables to association with the subnets"
 }
+
+#Network ACL vars
+variable "network_acl_name" {
+    type = list(string)
+}

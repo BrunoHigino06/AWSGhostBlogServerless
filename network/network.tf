@@ -52,3 +52,17 @@ module "PublicRouteTableAssociation" {
     module.RouteTable
   ]
 }
+
+module "NetwrokACL" {
+  source = "git::https://github.com/BrunoHigino06/aws_Network_ACL_module.git"
+
+  # VPC ID
+  vpc_id = module.vpc.vpc_id
+
+  #Netwrok ACL Names
+  network_acl_name = var.network_acl_name
+
+  depends_on = [
+    module.vpc
+  ]
+}
