@@ -38,11 +38,11 @@ module "RouteTable" {
   ]
 }
 
-module "PublicRouteTableAssociation" {
+module "RouteTableAssociation" {
   source = "git::https://github.com/BrunoHigino06/aws_route_table_association_module.git"
 
-  #Subnet name to associate with public route table
-  subnet_name_association = var.subnet_name_association
+  #Subnet name to associate with route table
+  subnet_name_association = var.RTsubnet_name_association
   #Route table name to associate with the subnets
   route_table_name_association = var.route_table_name_association
 

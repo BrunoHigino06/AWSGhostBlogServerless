@@ -19,9 +19,13 @@ module "network" {
   rt_names = var.rt_names
 
   #Route Table Association inputs
-  subnet_name_association = var.subnet_name_association
+  RTsubnet_name_association = var.RTsubnet_name_association
   route_table_name_association = var.route_table_name_association
 
   #NetWork ACL inputs
   network_acl_name = var.network_acl_name
+
+  #Network ACL Association inputs
+  ACLsubnet_name_association = var.ACLsubnet_name_association
+  networkAcl_name_association = var.networkAcl_name_association
 }

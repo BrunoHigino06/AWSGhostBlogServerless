@@ -13,8 +13,12 @@ subnet_az          = ["us-east-1a", "us-east-1b", "us-east-1a", "us-east-1b", "u
 rt_names = ["PublicRT", "PrivateRT"]
 
 #Route Table Association inputs
-subnet_name_association = ["Alb1", "Alb2", "FrontEnd1", "FrontEnd2", "DataBase1", "DataBase2"]
+RTsubnet_name_association = ["Alb1", "Alb2", "FrontEnd1", "FrontEnd2", "DataBase1", "DataBase2"]
 route_table_name_association = ["PublicRT", "PublicRT", "PrivateRT", "PrivateRT", "PrivateRT", "PrivateRT"]
 
 #NetWork ACL inputs
 network_acl_name = ["PublicACL", "PrivateACL"]
+
+#Network ACL Association input
+ACLsubnet_name_association = ["Alb1", "Alb2", "FrontEnd1", "FrontEnd2", "DataBase1", "DataBase2"]
+networkAcl_name_association = ["PublicACL", "PublicACL", "PrivateACL", "PrivateACL", "PrivateACL", "PrivateACL"]

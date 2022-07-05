@@ -26,3 +26,4 @@ Itens.txt
 .terraform/modules/network.vpc/AWS/network/routetable/vars.tf
 .terraform/modules/network.vpc/AWS/network/routetableassociation/routetableassociation.tf
 .terraform/modules/network.vpc/AWS/network/routetableassociation/vars.tf
+.terraform/
