@@ -66,3 +66,8 @@ module "NetwrokACL" {
     module.vpc
   ]
 }
+
+resource "aws_network_acl_association" "main" {
+  network_acl_id = ""
+  subnet_id      = ""
+}

@@ -45,14 +45,3 @@ variable "network_acl_name" {
     type = list(string)
     description = "Name of the network acl's"
 }
-
-#Network ACL Association vars
-variable "ACLsubnet_name_association" {
-  type = list(string)
-  description = "Names of the subnets to associate with a network acl"
-}
-
-variable "networkAcl_name_association" {
-  type = list(string)
-  description = "name of the network acl to association with the subnets"
-}
