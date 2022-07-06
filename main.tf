@@ -26,6 +26,6 @@ module "network" {
   network_acl_name = var.network_acl_name
 
   #Network ACL Association inputs
-  ACLsubnet_name_association = var.ACLsubnet_name_association
-  networkAcl_name_association = var.networkAcl_name_association
+  Pubsubnet_name_association = var.Pubsubnet_name_association
+  Privsubnet_name_association = var.Privsubnet_name_association
 }

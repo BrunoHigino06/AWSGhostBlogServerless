@@ -46,3 +46,13 @@ variable "network_acl_name" {
     type = list(string)
     description = "Name of the Network ACL's"
 }
+
+#Network ACL Association vars
+variable "Pubsubnet_name_association" {
+    type = list(string)
+    description = "Name of the to association with the public ACL"
+}
+variable "Privsubnet_name_association" {
+    type = list(string)
+    description = "Name of the to association with the private ACL"
+}

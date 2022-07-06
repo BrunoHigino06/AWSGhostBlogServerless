@@ -67,7 +67,15 @@ module "NetwrokACL" {
   ]
 }
 
-resource "aws_network_acl_association" "main" {
-  network_acl_id = ""
-  subnet_id      = ""
+resource "aws_network_acl_association" "PublicACL" {
+  count = length(var.Pubsubnet_name_association)
+  network_acl_id = module.NetwrokACL.acl_id[0]
+  subnet_id      = data.aws_subnet.Public_subnet_name[count.index].id
 }
+
+resource "aws_network_acl_association" "PrivateACL" {
+  count = length(var.Privsubnet_name_association)
+  network_acl_id = module.NetwrokACL.acl_id[1]
+  subnet_id      = data.aws_subnet.Private_subnet_name[count.index].id
+}
+

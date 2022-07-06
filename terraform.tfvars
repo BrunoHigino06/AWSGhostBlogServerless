@@ -18,3 +18,7 @@ route_table_name_association = ["PublicRT", "PublicRT", "PrivateRT", "PrivateRT"
 
 #NetWork ACL inputs
 network_acl_name = ["PublicACL", "PrivateACL"]
+
+#Network ACL Association inputs
+Pubsubnet_name_association = ["Alb1", "Alb2"]
+Privsubnet_name_association = ["FrontEnd1", "FrontEnd2", "DataBase1", "DataBase2"]
